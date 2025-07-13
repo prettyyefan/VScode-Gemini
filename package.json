@@ -1,0 +1,126 @@
+{
+  "name": "vscode-gemini",
+  "displayName": "Vscode-Gemini",
+  "description": "智能终端问答助手，基于Gemini AI",
+  
+  "version": "0.0.1",
+  "publisher": "yefan",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-gemini.startAIChat"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-gemini.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "vscode-gemini.startAIChat",
+        "title": "启动AI智能问答终端",
+        "category": "Gemini"
+      },
+      {
+        "command": "vscode-gemini.askQuestion",
+        "title": "向AI提问",
+        "category": "Gemini"
+      },
+      {
+        "command": "vscode-gemini.analyzeSelectedCode",
+        "title": "分析选中的代码",
+        "category": "Gemini"
+      },
+      {
+        "command": "vscode-gemini.askAboutCode",
+        "title": "询问关于代码的问题",
+        "category": "Gemini"
+      }
+    ],
+    "configuration": {
+      "title": "Gemini AI 助手",
+      "properties": {
+        "vscode-gemini.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Gemini API Key (请在Google AI Studio获取)"
+        },
+        "vscode-gemini.model": {
+          "type": "string",
+          "default": "gemini-1.5-flash",
+          "description": "使用的Gemini模型",
+          "enum": [
+            "gemini-1.5-flash",
+            "gemini-1.5-pro",
+            "gemini-pro"
+          ]
+        },
+        "vscode-gemini.autoCreateTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "自动创建新终端进行AI对话"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "vscode-gemini.startAIChat",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g"
+      },
+      {
+        "command": "vscode-gemini.analyzeSelectedCode",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vscode-gemini.askAboutCode",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.102.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.3",
+    "eslint": "^9.25.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "axios": "^1.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yefan0/VScode-Gemini.git"
+  }
+}
