@@ -109,7 +109,7 @@ MIT License
 
 📍 **GitHub仓库**: [https://github.com/prettyyefan/VScode-Gemini.git](https://github.com/prettyyefan/VScode-Gemini.git)
 
-欢迎提交Issue和Pull Request！下载数过20继续更新！
+欢迎提交Issue和Pull Request！下载数过50继续更新！
 
 ---
 
