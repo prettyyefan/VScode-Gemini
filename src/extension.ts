@@ -152,7 +152,7 @@ export function activate(context: vscode.ExtensionContext) {
 		statusBarItem
 	);
 
-	// 显示欢迎消息
+	// 显示
 	vscode.window.showInformationMessage('🤖 Gemini AI 助手已就绪！点击状态栏图标或使用 Ctrl+Shift+G 开始使用。');
 }
 

@@ -101,32 +101,15 @@
    - 等待一段时间后重试
    - 考虑升级API配额
 
-## 开发
-
-### 本地开发
-
-```bash
-# 安装依赖
-pnpm install
-
-# 编译
-pnpm run compile
-
-# 监听模式
-pnpm run watch
-
-# 测试
-pnpm run test
-```
-
 ## 许可证
 
 MIT License
 
 ## 贡献
 
-欢迎提交Issue和Pull Request！
+📍 **GitHub仓库**: [https://github.com/prettyyefan/VScode-Gemini.git](https://github.com/prettyyefan/VScode-Gemini.git)
+欢迎提交Issue和Pull Request！下载数过20继续更新！
 
 ---
 
-🤖 让Gemini AI成为您的编程助手，提升开发效率！
+

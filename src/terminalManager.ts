@@ -51,7 +51,7 @@ export class TerminalManager {
             return;
         }
 
-        // 清屏并显示欢迎信息
+        // 清屏
         this.aiTerminal.sendText('clear', true);
         this.aiTerminal.sendText('Write-Host "🤖 欢迎使用 Gemini AI 智能助手！"', true);
         this.aiTerminal.sendText('Write-Host "💡 使用方法："', true);
